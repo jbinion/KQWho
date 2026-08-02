@@ -1,5 +1,3 @@
-/* @import "tailwindcss"; */
-
 html,
 body {
   height: 100%;
@@ -123,20 +121,6 @@ h1 {
   background-color: #cc4400;
 }
 
-.query-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-}
-
-.query-section input,
-.query-section select,
-.query-section button {
-  flex: 1 1 100%;
-  max-width: 300px;
-}
-
 .mode-box {
   margin: 1rem 0;
   font-size: 0.7rem;
@@ -251,21 +235,6 @@ h1 {
   .character-card {
     font-size: 0.6rem;
   }
-
-  #queryFeedback,
-  #queryLog {
-    font-size: 0.75rem;
-  }
-}
-
-#promptInstruction {
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-  background-color: #1c4168;
-  border: 1px dashed gold;
-  padding: 0.5rem;
-  border-radius: 6px;
-  transition: opacity 0.3s ease;
 }
 
 #characters {
@@ -297,27 +266,6 @@ h1 {
   }
 }
 
-.page-content {
-  max-width: 700px;
-  width: 90%;
-  margin: 0 auto;
-  text-align: left;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  padding: 1rem;
-  box-sizing: border-box;
-}
-
-.page-content pre {
-  background-color: #001e2b;
-  padding: 0.8rem;
-  border-radius: 6px;
-  font-family: "Courier New", monospace;
-  font-size: 0.75rem;
-  white-space: pre-wrap;
-  overflow-x: auto;
-}
-
 @media (max-width: 768px) {
   .main-navbar {
     flex-direction: column;
@@ -328,11 +276,6 @@ h1 {
   .nav-links {
     flex-direction: column;
     gap: 0.5rem;
-  }
-
-  .page-content {
-    padding: 1rem;
-    font-size: 0.85rem;
   }
 
   .banner h1 {
@@ -388,57 +331,6 @@ h1 {
   color: white;
   margin-top: 0.5rem;
   font-size: 0.85rem;
-}
-
-.query-block {
-  background-color: #001e2b;
-  border-radius: 5px;
-  padding: 0.8rem;
-  font-family: "Courier New", monospace;
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
-  color: white;
-}
-
-.query-line {
-  margin-bottom: 0.2rem;
-}
-
-.query-note {
-  font-style: italic;
-  font-size: 0.85rem;
-  color: #c0c0c0;
-  margin-bottom: 0.6rem;
-  padding-left: 1rem;
-}
-
-.instruction-panel {
-  background: #073c5b;
-  color: #ffffff;
-  font-size: 0.85rem;
-  padding: 1.2rem;
-  box-sizing: border-box;
-}
-
-.instruction-panel h2 {
-  font-family: "Press Start 2P", cursive;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  color: #ff6a1a;
-}
-
-.instruction-list {
-  padding-left: 1rem;
-  list-style: square;
-}
-
-.instruction-main {
-  flex: 1;
-  padding: 2rem;
-  background-color: #042f4b;
-  color: white;
-  overflow-y: auto;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .character-card div {
