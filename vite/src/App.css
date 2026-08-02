@@ -1,3 +1,30 @@
+@import "tailwindcss";
+
+:root {
+  --background: #042f4b;
+  --nav-background: #001e2b;
+  --li-background: #003858;
+  --foreground: #ffffff;
+  --accent: #ff6a1a;
+  --button: #ff5400;
+  --button-hover: #cc4400;
+  /*  */
+  --navTitle: #ff6a1a;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-nav-background: var(--nav-background);
+  --color-li-background: var(--li-background);
+
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-button: var(--button);
+  --color-button-hover: var(--button-hover);
+
+  --color-navTitle: var(--navTitle);
+}
+
 html,
 body {
   height: 100%;
@@ -5,39 +32,18 @@ body {
 }
 
 body {
+  @apply bg-background text-foreground;
+}
+
+body {
   font-family: "Nunito", sans-serif;
-  background: #042f4b;
-  color: #ffffff;
+
   margin: 0;
   padding: 0;
 }
 
-.layout {
-  display: flex;
-  min-height: 100vh;
-  align-items: stretch;
-  width: 100%;
-}
-
-.left-panel,
-.right-panel {
-  flex: 0 0 200px;
-  min-width: 150px;
-  max-width: 240px;
-  padding: 1rem;
-  font-size: 0.65rem;
-  background: linear-gradient(to bottom, #cc5500, hwb(33 20% 0%));
-  color: #fff;
-  overflow-y: auto;
-  box-sizing: border-box;
-  /* 🟧 NEW */
-  display: flex;
-  flex-direction: column;
-}
-
-.left-panel img {
-  width: 100%;
-  border-radius: 8px;
+.pressStart {
+  font-family: "Press Start 2P", cursive;
 }
 
 main {
@@ -53,8 +59,6 @@ main {
 }
 
 .main-navbar {
-  background-color: #001e2b;
-  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,7 +74,6 @@ main {
 
 .nav-title {
   font-size: 1rem;
-  color: #ff6a1a;
 }
 
 .nav-links {
@@ -87,12 +90,6 @@ main {
 .nav-links a:hover {
   color: #ff6a1a;
   text-shadow: 0 0 4px #ff6a1a;
-}
-
-h1 {
-  margin-bottom: 1rem;
-  color: #ffffff;
-  font-family: "Press Start 2P", cursive;
 }
 
 .query-box input {
@@ -163,80 +160,6 @@ h1 {
   border-color: #ff5400;
 }
 
-.right-panel ul {
-  list-style: none;
-  padding: 0;
-}
-
-.right-panel li {
-  background: white;
-  margin-bottom: 0.4rem;
-  padding: 0.3rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  text-align: center;
-  color: #003858;
-}
-
-.new-round {
-  margin: 1rem 0;
-}
-
-.new-round button {
-  background: #ff5400;
-  color: white;
-  border: none;
-  padding: 0.6rem 1rem;
-  font-family: inherit;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.new-round button:hover {
-  background: #cc4400;
-}
-
-.banner {
-  background-color: #ff6a1a;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  text-align: center;
-  margin-bottom: 1rem;
-  width: 100%;
-  max-width: 700px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.banner h1 {
-  color: #ffffff;
-  font-size: 1.2rem;
-  margin: 0;
-  font-family: "Press Start 2P", cursive;
-}
-
-@media (max-width: 768px) {
-  .layout {
-    flex-direction: column;
-  }
-
-  .left-panel,
-  .right-panel {
-    width: 100%;
-    flex: none;
-    max-height: 150px;
-  }
-
-  main {
-    padding: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .character-card {
-    font-size: 0.6rem;
-  }
-}
-
 #characters {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
@@ -249,17 +172,6 @@ h1 {
 }
 
 @media (max-width: 768px) {
-  .layout {
-    flex-direction: column;
-  }
-
-  .left-panel,
-  .right-panel {
-    width: 100%;
-    max-height: none;
-    order: 0;
-  }
-
   main {
     order: 1;
     width: 100%;
@@ -277,17 +189,6 @@ h1 {
     flex-direction: column;
     gap: 0.5rem;
   }
-
-  .banner h1 {
-    font-size: 1rem;
-  }
-}
-
-/* Accordion layout */
-#filterList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 /* Filter header (clickable area) */
@@ -322,7 +223,7 @@ h1 {
 }
 
 .heading {
-  font-size: large;
+  @apply text-lg;
 }
 
 #targetDisplay {

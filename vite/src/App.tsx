@@ -117,7 +117,7 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <div className="layout">
+      <div className="layout flex flex-row w-full min-h-screen  ">
         <LeftPanel round={round} />
 
         <main>
@@ -133,14 +133,7 @@ export default function App() {
               placeholder='e.g., where Species == "Raccoon"'
             />
             <button onClick={runQuery}>Run Query</button>
-            <p
-              style={{
-                fontSize: "0.75rem",
-                color: "white",
-                textAlign: "center",
-                marginTop: "0.5rem",
-              }}
-            >
+            <p className="text-center mt-2.5 text-xs">
               🕵️ To catch the attacker, use:{" "}
               <code>where Name == "Full Name"</code>
             </p>
@@ -224,13 +217,14 @@ export default function App() {
             </div>
           )}
 
-          <div className="new-round">
-            <button onClick={() => startRound()}>🔄 New Round</button>
-          </div>
+          <button
+            onClick={() => startRound()}
+            className=" my-4 cursor-pointer text-white! bg-button! rounded! px-4! py-2! hover:bg-button-hover!"
+          >
+            🔄 New Round
+          </button>
 
-          <div style={{ marginTop: "1rem", fontSize: "0.75rem" }}>
-            🔁 Queries Used: {queryCount}
-          </div>
+          <div className="mt-4 text-xs">🔁 Queries Used: {queryCount}</div>
 
           <div id="characters">
             {round.characters.map((char) => (
