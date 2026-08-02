@@ -120,7 +120,7 @@ export default function App() {
       <div className="layout flex flex-row w-full min-h-screen  ">
         <LeftPanel round={round} />
 
-        <main>
+        <main className="flex flex-1 flex-col items-center p-6 bg-main-background inset-shadow-sm">
           <Banner />
 
           <div className="query-box">
@@ -131,6 +131,7 @@ export default function App() {
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && runQuery()}
               placeholder='e.g., where Species == "Raccoon"'
+              className="w-[350px] mr-2 p-[0.6rem] border border-input-border font-courier text-[0.9rem] bg-nav-background! text-foreground!"
             />
             <button onClick={runQuery}>Run Query</button>
             <p className="text-center mt-2.5 text-xs">
