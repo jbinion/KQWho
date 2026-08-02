@@ -31,10 +31,25 @@
   --font-courier: "Courier New", monospace;
 }
 
-html,
-body {
-  height: 100%;
-  overflow-x: hidden;
+@layer base {
+  *,
+  ::before,
+  ::after,
+  ::backdrop {
+    border: 0 solid;
+  }
+}
+
+button,
+input,
+select,
+optgroup,
+textarea,
+::file-selector-button {
+  color: black;
+  border-radius: 0;
+  background-color: white;
+  opacity: 1;
 }
 
 body {
@@ -43,7 +58,6 @@ body {
 
 body {
   font-family: "Nunito", sans-serif;
-
   margin: 0;
   padding: 0;
 }
